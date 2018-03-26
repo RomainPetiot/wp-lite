@@ -1,0 +1,26 @@
+{
+	"name": "StarterKitGrid",
+	"version": "1.0.0",
+	"description": "",
+	"main": "Starter KIT Grid Layout CSS",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Romain Petiot",
+	"license": "ISC",
+	"dependencies": {
+		"browser-sync": "^2.11.0",
+		"chart.js": "*",
+		"gulp": "^3.9.1",
+		"gulp-cache": "^0.5",
+		"gulp-clean-css": "*",
+		"gulp-imagemin": "^3.4",
+		"gulp-minify": "*",
+		"gulp-rename": "*",
+		"gulp-sass": "^3.1.0",
+		"jquery": "^3.2.1",
+		"minify": "*",
+		"normalize.css": "^7.0.0",
+		"font-awesome": "^4.7"
+	}
+}
