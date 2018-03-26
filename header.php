@@ -33,7 +33,7 @@
 			<div class="align-right">
 				<i class="fa fa-times" aria-hidden="true" id="times-menu" onclick="menuMobile()"></i>
 			</div>
-			<?php  joints_top_nav(); ?>
+			<?php  wplite_top_nav(); ?>
 		</div>
 		<div id="burger-menu" class="">
 			<i class="fa fa-bars" aria-hidden="true"></i>
