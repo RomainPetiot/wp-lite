@@ -11,7 +11,7 @@
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php
-		$image = get_option('wpLite_favicon');
+		$image = get_option('wplite_favicon');
 		if( $image ) {
 			$src = wp_get_attachment_image_src( $image, 'ico' );
 			?>
@@ -44,7 +44,7 @@
 		<header id="header" class="wrapper">
 			<div class="header-logo">
 				<a href="<?php echo home_url();?>">
-					<?php $image = get_option('wpLite_logo');
+					<?php $image = get_option('wplite_logo');
 					if( $image ) {
 						echo wp_get_attachment_image( $image, 'logo' );
 					}
@@ -52,7 +52,7 @@
 				</a>
 			</div>
 			<div class="header-menu">
-				<?php  wpLite_top_nav(); ?>
+				<?php  wplite_top_nav(); ?>
 			</div>
 			<?php if ( is_active_sidebar( 'sidebarmenu' ) ) : ?>
 

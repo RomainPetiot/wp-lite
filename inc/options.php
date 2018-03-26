@@ -4,16 +4,16 @@ add_action( 'admin_init', 'myThemeRegisterSettings' );
 
 function myThemeRegisterSettings( )
 {
-	register_setting( 'my_theme', 'wpLite_email_dest' );
+	register_setting( 'my_theme', 'wplite_email_dest' );
 
-	register_setting( 'my_theme', 'wpLite_logo' );
-	register_setting( 'my_theme', 'wpLite_favicon' );
+	register_setting( 'my_theme', 'wplite_logo' );
+	register_setting( 'my_theme', 'wplite_favicon' );
 
-	register_setting( 'my_theme', 'wpLite_facebook' );
-	register_setting( 'my_theme', 'wpLite_twitter' );
-	register_setting( 'my_theme', 'wpLite_linkedin' );
-	register_setting( 'my_theme', 'wpLite_slack' );
-	register_setting( 'my_theme', 'wpLite_mail' );
+	register_setting( 'my_theme', 'wplite_facebook' );
+	register_setting( 'my_theme', 'wplite_twitter' );
+	register_setting( 'my_theme', 'wplite_linkedin' );
+	register_setting( 'my_theme', 'wplite_slack' );
+	register_setting( 'my_theme', 'wplite_mail' );
 }
 
 // la fonction myThemeAdminMenu( ) sera exécutée
@@ -49,15 +49,15 @@ function myThemeSettingsPage( )
 				wp_nonce_field('update-options');
 				settings_fields( 'my_theme' );
 			?>
-				<?php add_option_text('wpLite_email_dest', 'Adresse email destination pour les formulaires');?>
-				<?php add_option_image('wpLite_logo', 'Logo Header');?>
-				<?php add_option_image('wpLite_favicon', 'Favicon');?>
+				<?php add_option_text('wplite_email_dest', 'Adresse email destination pour les formulaires');?>
+				<?php add_option_image('wplite_logo', 'Logo Header');?>
+				<?php add_option_image('wplite_favicon', 'Favicon');?>
 
-				<?php add_option_text('wpLite_facebook', 'Facebook');?>
-				<?php add_option_text('wpLite_twitter', 'Twitter');?>
-				<?php add_option_text('wpLite_linkedin', 'Linkedin');?>
-				<?php add_option_text('wpLite_slack', 'Slack');?>
-				<?php add_option_text('wpLite_mail', 'Mail');?>
+				<?php add_option_text('wplite_facebook', 'Facebook');?>
+				<?php add_option_text('wplite_twitter', 'Twitter');?>
+				<?php add_option_text('wplite_linkedin', 'Linkedin');?>
+				<?php add_option_text('wplite_slack', 'Slack');?>
+				<?php add_option_text('wplite_mail', 'Mail');?>
 			</table>
 			<p class="submit">
 				<input type="submit" class="button-primary" value="Mettre à jour" />

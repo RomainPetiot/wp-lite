@@ -25,7 +25,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
 // RSS Dashboard Widget
-wpLite_rss_dashboard_widget() {
+function wplite_rss_dashboard_widget() {
 	if(function_exists('fetch_feed')) {
 		include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
 		$feed = fetch_feed('http://jointswp.com/feed/rss/');        // specify the source feed
@@ -47,7 +47,7 @@ wpLite_rss_dashboard_widget() {
 }
 
 // Calling all custom dashboard widgets
-wpLite_custom_dashboard_widgets() {
+function wplite_custom_dashboard_widgets() {
 	wp_add_dashboard_widget('joints_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'wplite'), 'joints_rss_dashboard_widget');
 	/*
 	Be sure to drop any other created Dashboard Widgets
@@ -57,11 +57,11 @@ wpLite_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');
+add_action('wp_dashboard_setup', 'wplite_custom_dashboard_widgets');
 
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
-wpLite_custom_admin_footer() {
+function wplite_custom_admin_footer() {
 	_e('<span id="footer-thankyou">Developed by <a href="https://www.romainpetiot.com" target="_blank">Romain Petiot</a></span>.', 'wplite');
 }
 

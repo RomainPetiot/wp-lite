@@ -1,7 +1,7 @@
 <?php
 
 // Adding WP Functions & Theme Support
-wpLite_theme_support() {
+wplite_theme_support() {
 
 	// Add WP Thumbnail Support
 	add_theme_support( 'post-thumbnails' );

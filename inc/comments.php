@@ -1,6 +1,6 @@
 <?php
 // Comment Layout
-wpLite_comments($comment, $args, $depth) {
+function wplite_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class('panel'); ?>>
 		<div class="media-object">
