@@ -28,9 +28,9 @@ function wplite_start() {
 //The default wordpress head is a mess. Let's clean it up by removing all the junk we don't need.
 function wplite_head_cleanup() {
 	// Remove category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// Remove post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links', 2 );
 	// Remove EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// Remove Windows live writer
@@ -75,17 +75,6 @@ function wplite_excerpt_more($more) {
 	//return '<a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointswp') . get_the_title($post->ID).'">'. __('... Read more &raquo;', 'jointswp') .'</a>';
 }
 
-//  Stop WordPress from using the sticky class (which conflicts with Foundation), and style WordPress sticky posts using the .wp-sticky class instead
-function remove_sticky_class($classes) {
-	if(in_array('sticky', $classes)) {
-		$classes = array_diff($classes, array("sticky"));
-		$classes[] = 'wp-sticky';
-	}
-
-	return $classes;
-}
-add_filter('post_class','remove_sticky_class');
-
 //This is a modified the_author_posts_link() which just returns the link. This is necessary to allow usage of the usual l10n process with printf()
 function wplite_get_the_author_posts_link() {
 	global $authordata;
@@ -100,20 +89,7 @@ function wplite_get_the_author_posts_link() {
 	return $link;
 }
 
-add_action( 'admin_menu', 'adjust_the_wp_menu', 999 );
-function adjust_the_wp_menu() {
-    //remove_submenu_page( 'widgets.php' );
-}
-
-
 function remove_json_api () {
-
-    // Remove the REST API lines from the HTML Header
-    remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-
-    // Remove the REST API endpoint.
-    remove_action( 'rest_api_init', 'wp_oembed_register_route' );
 
     // Turn off oEmbed auto discovery.
     add_filter( 'embed_oembed_discover', '__return_false' );
@@ -129,11 +105,7 @@ function remove_json_api () {
 
     remove_action( 'wp_head','feed_links', 2 );
   	remove_action( 'wp_head','feed_links_extra', 3 );
-
   	remove_action( 'wp_head', 'wp_resource_hints', 2 );
-
-
-
 
 }
 add_action( 'after_setup_theme', 'remove_json_api' );

@@ -29,17 +29,7 @@
 
 	<body <?php body_class(); ?> >
 
-		<div class="" id="menuMobile">
-			<div class="align-right">
-				<i class="fa fa-times" aria-hidden="true" id="times-menu" onclick="menuMobile()"></i>
-			</div>
-			<?php  wplite_top_nav(); ?>
-		</div>
-		<div id="burger-menu" class="">
-			<i class="fa fa-bars" aria-hidden="true"></i>
-		</div>
-
-		<div class="overlay" onclick="closeModal()" id="modalOverlay"></div>
+		
 
 		<header id="header" class="wrapper">
 			<div class="header-logo">

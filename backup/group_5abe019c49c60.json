@@ -1,12 +1,12 @@
 {
-    "key": "group_5a8d413d1ca3e",
-    "title": "contact",
+    "key": "group_5abe019c49c60",
+    "title": "test",
     "fields": [
         {
-            "key": "field_5a8d8153f20b7",
-            "label": "Lien vers la carte",
-            "name": "link",
-            "type": "url",
+            "key": "field_5abe01c0d70a7",
+            "label": "titre",
+            "name": "title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,15 +16,18 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page_type",
                 "operator": "==",
-                "value": "contact.php"
+                "value": "front_page"
             }
         ]
     ],
@@ -36,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1519223140
+    "modified": 1522402425
 }

@@ -48,7 +48,21 @@ function wplite_rss_dashboard_widget() {
 
 // Calling all custom dashboard widgets
 function wplite_custom_dashboard_widgets() {
-	wp_add_dashboard_widget('joints_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'wplite'), 'joints_rss_dashboard_widget');
+	//wp_add_dashboard_widget('wplite_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'wplite'), 'wplite_rss_dashboard_widget');
+
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );            // WordPress blog
+    remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );          // Other WordPress News
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+    remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );   // Right Now
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );   
+	//remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' ); // Recent Comments
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );  // Incoming Links
+	//remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );   // Plugins
 	/*
 	Be sure to drop any other created Dashboard Widgets
 	in this function and they will all load.
@@ -96,3 +110,9 @@ function remove_submenus() {
 add_action('admin_menu', 'remove_submenus');
 
 define( 'DISALLOW_FILE_EDIT', true );
+
+
+add_action( 'admin_menu', 'remove_menu_widget', 999 );
+function remove_menu_widget() {
+    remove_submenu_page(  'themes.php', 'widgets.php' );
+}

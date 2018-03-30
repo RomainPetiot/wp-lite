@@ -49,6 +49,7 @@ function df_disable_comments_hide_existing_comments($comments) {
 	return $comments;
 }
 add_filter('comments_array', 'df_disable_comments_hide_existing_comments', 10, 2);
+
 // Remove comments page in menu
 function df_disable_comments_admin_menu() {
 	remove_menu_page('edit-comments.php');

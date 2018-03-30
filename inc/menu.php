@@ -44,46 +44,7 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
     }
 }
 
-// The Off Canvas Menu
-function wplite_off_canvas_nav() {
-	 wp_nav_menu(array(
-        'container' => false,                           // Remove nav container
-        'menu_class' => 'vertical menu',                // Adding custom nav class
-        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-        'theme_location' => 'main-nav',        			// Where it's located in the theme
-        'depth' => 5,                                   // Limit the depth of the nav
-        'fallback_cb' => false,                         // Fallback function (see below)
-        'walker' => new Off_Canvas_Menu_Walker()
-    ));
-}
-
-class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
-    function start_lvl(&$output, $depth = 0, $args = Array() ) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"vertical menu\">\n";
-    }
-}
-
-
-// Header Fallback Menu
-function wplite_main_nav_fallback() {
-	wp_page_menu( array(
-		'show_home' => true,
-    	'menu_class' => '',      						// Adding custom nav class
-		'include'     => '',
-		'exclude'     => '',
-		'echo'        => true,
-        'link_before' => '',                           // Before each link
-        'link_after' => ''                             // After each link
-	) );
-}
-
-// Footer Fallback Menu
-function wplite_footer_links_fallback() {
-	/* You can put a default here if you like */
-}
-
-// Add Foundation active class to menu
+// Add active class to menu
 function required_active_nav_class( $classes, $item ) {
     if ( $item->current == 1 || $item->current_item_ancestor == true ) {
         $classes[] = 'active';
