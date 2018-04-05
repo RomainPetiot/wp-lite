@@ -59,7 +59,7 @@ function wplite_custom_dashboard_widgets() {
     remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
 	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );   // Right Now
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );   
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
 	//remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' ); // Recent Comments
 	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );  // Incoming Links
 	//remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );   // Plugins
@@ -114,5 +114,5 @@ define( 'DISALLOW_FILE_EDIT', true );
 
 add_action( 'admin_menu', 'remove_menu_widget', 999 );
 function remove_menu_widget() {
-    remove_submenu_page(  'themes.php', 'widgets.php' );
+    //remove_submenu_page(  'themes.php', 'widgets.php' );
 }
